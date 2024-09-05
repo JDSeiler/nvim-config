@@ -5,9 +5,8 @@ require('mini.icons').setup()
 -- Both are configured in lazy.lua
 
 -- BASIC CONFIGURATION
-vim.opt.background = 'dark' -- or "light" for light mode
+vim.opt.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
-
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -28,15 +27,16 @@ require('lualine').setup {
 
 -- TELESCOPE BINDINGS
 local ts_builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', ts_builtin.find_files, {})
-vim.keymap.set('n', '<leader>fb', ts_builtin.buffers, {})
-vim.keymap.set('n', '<leader>fg', ts_builtin.live_grep, {})
--- 'r' for 'recent'
-vim.keymap.set('n', '<leader>fr', ts_builtin.oldfiles, {})
-vim.keymap.set('n', '<leader>fj', ts_builtin.jumplist, {})
--- 'z' for 'fuzzy'
-vim.keymap.set('n', '<leader>fz', ts_builtin.current_buffer_fuzzy_find, {})
--- 's' for 'symbols'
-vim.keymap.set('n', '<leader>fs', ts_builtin.treesitter, {})
-
+-- Set bindings with which-key so that they appear in the fancy menu
+local wk = require('which-key')
+wk.add({
+  mode = { 'n' },
+  { '<leader>ff', ts_builtin.find_files, desc = 'Find File' },
+  { '<leader>fb', ts_builtin.buffers, desc = 'Find Buffer', group = 'buffers' },
+  { '<leader>fg', ts_builtin.live_grep, desc = 'Grep in Project' },
+  { '<leader>fr', ts_builtin.oldfiles, desc = 'Recent Files' },
+  { '<leader>fj', ts_builtin.jumplist, desc = 'Jump List' },
+  { '<leader>fz', ts_builtin.current_buffer_fuzzy_find, desc = 'Current Buffer Fuzzy-Find' },
+  { '<leader>fs', ts_builtin.treesitter, desc = 'Treesitter Symbols' }
+})
 

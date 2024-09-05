@@ -18,6 +18,12 @@ vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 vim.opt.expandtab = true
 
+-- Folding
+-- -- This causes folds to close on file open? But you can hit `zi` to open them all, so maybe not an issue.
+-- -- With which-key I don't get lost trying to figure out how to manage folds
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
 -- ## lualine
 require('lualine').setup {
     sections = {
@@ -40,3 +46,29 @@ wk.add({
   { '<leader>fs', ts_builtin.treesitter, desc = 'Treesitter Symbols' }
 })
 
+-- TREESITTER
+local treesitter = require("nvim-treesitter.configs")
+treesitter.setup({
+  -- enable syntax highlighting
+  highlight = {
+    enable = true,
+  },
+  -- enable indentation
+  indent = { enable = true },
+  -- ensure these language parsers are installed
+  ensure_installed = {
+    "json",
+    "javascript",
+    "typescript",
+    "tsx",
+    "html",
+    "css",
+    "ruby",
+    "markdown",
+    "markdown_inline",
+    "lua",
+    "vim"
+  },
+  -- auto install above language parsers
+  auto_install = true,
+})

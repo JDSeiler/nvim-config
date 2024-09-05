@@ -11,7 +11,7 @@ To set up this config on a new machine:
 1. `mkdir ~/.config/nvim`
 2. `cd ~/.config/nvim`
 3. Clone this repository
-4. Launch Neovim
+4. Launch Neovim -- `lazy` should take care of installing everything automagically
 
 If the Neovim config directory already exists. Save a copy of it, delete the
 contents of the directory, and follow the steps above from step 2.

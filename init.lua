@@ -5,8 +5,8 @@ require('mini.icons').setup()
 -- Both are configured in lazy.lua
 
 -- BASIC CONFIGURATION
-vim.opt.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.opt.background = "light" -- or "light" for light mode
+vim.cmd([[colorscheme ayu-light]])
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -28,7 +28,10 @@ vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 require('lualine').setup {
     sections = {
         lualine_y = {'searchcount'},
-    } 
+    },
+    options = {
+        theme = 'ayu'
+    },
 }
 
 -- TELESCOPE BINDINGS
@@ -72,3 +75,7 @@ treesitter.setup({
   -- auto install above language parsers
   auto_install = true,
 })
+
+-- HUNK
+hunk = require("hunk")
+hunk.setup()

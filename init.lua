@@ -79,3 +79,6 @@ treesitter.setup({
 -- HUNK
 hunk = require("hunk")
 hunk.setup()
+
+-- LOCAL OVERRIDES
+require('local')

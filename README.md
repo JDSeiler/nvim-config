@@ -22,8 +22,10 @@ Sometimes, you might want to have machine specific customizations of the neovim 
 For example, I might want to switch up my color scheme on my work laptop without having
 to reconfigure my personal laptop.
 
-Create a file that is a sibling of `init.lua` called `local.lua`, and then add whatever
-config you want in there. For example, to reset themes:
+1. Create `lua/config/local.lua`
+2. Add whatever config you want in there
+
+For example, to reset themes:
 ```lua
 vim.opt.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])

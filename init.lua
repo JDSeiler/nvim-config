@@ -81,4 +81,4 @@ hunk = require("hunk")
 hunk.setup()
 
 -- LOCAL OVERRIDES
-require('local')
+require('config.local')

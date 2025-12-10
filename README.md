@@ -42,6 +42,3 @@ require('lualine').setup {
 There doesn't seem to be any issue with calling plugin's 'setup' functions multiple times.
 I'm under the assumption that it's "last call wins", or maybe they get merged.
 
-# Zen Mode
-The ZenMode and Twilight plugins are included for focused writing. You can activate both
-by running `:ZenMode`.
